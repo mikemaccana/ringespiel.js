@@ -1,18 +1,48 @@
-# JCarousellite
+# Ringespiel.JS - the modern JCarouselLite
 
-jCarousel Lite is a jQuery plugin that carries you on a carousel ride filled with images and HTML content. Put simply, you can navigate images and/or HTML in a carousel-style widget. It is super light weight, at about 2 KB in size, yet very flexible and customizable to fit most of our needs.
+Ringespiel is an JS module that carries you on a carousel ride filled with images and HTML content. Put simply, you can navigate images and/or HTML in a carousel-style widget. 
 
-Did I mention that it weighs just 2 KB?
+It is super light weight, at about 2 KB in size, yet very flexible and customizable to fit most people's needs.
 
-As if that wasn't enough, the best part is yet to come... You don't need any special css file or class name to get this to work. Include the js file. Supply the HTML markup ("div" enclosing an "ul"). Then, construct the carousel with just a simple function call. It is all explained in the installation section. Don't forget to check out the demo for more details or just download now and play with it.
+Ringespiel is based on Ganesh Marwah's original JCarouselLite from many years ago.
 
-If you have any questions, suggestions, recommendations, requests,..., you can either leave a comment in this blog entry, or you can find me lurking around the jQuery mailing list.
+## What's the difference between Ringespiel and JCarouselLite?
+
+JCarousellite hasn't been updated since IE6 and JQuery 1.1. As of now, the site also apparently hosts malware. Ringespiel is an updated version, written in November 2012 by Mike MacCana, with the following changes:
+
+ - AMD loading
+ - Touch event support
+ - Unminify two character variables, 'this' abuse, etc.
+ - Pass jshint
+ - Work with current JQuery 1.8
+ - Tested on mobile
+ - Tested on current Chrome, Firefox, IE9/10, etc.
+ - MIT licensed only, rather than dual MIT/GPL.
+
+The project is still a WIP, but it works, and is used in production. 
 
 # Why? - We have a jCarousel plug-in already
 
 Ofcourse you do, and yes, jCarousel is a great plug-in. It offers a host of features and it is so customizable that you are limited only by your imagination.
 
 jCarousel Lite is not a replacement for jCarousel; rather it is a light-weight alternative for users (like me) whose primary focus is not to build a full-blown image gallery. For instance, my use-case needed a very simple carousel widget that was going to sit in one corner of the screen. Not much customizations were needed. I figured that jCarousel, with all its options was kinda overkill. So, i started developing my own mini carousel, and you are right now looking at the 1.0 version of the same.
+
+# How Do I Use This?
+
+Create a "div" enclosing an "ul". Then run:
+
+Just add it as a dependency when defining your JS modules. If you haven't used modules before, go visit requirejs. 
+
+	// Define our module, depending on jquery and this plugin
+	define('jquery','ringespiel'), function($){
+
+		// Wait for document to be ready
+		$(function(){
+			// Start the carousel
+			$("#mycarousel").jCarouselLite();
+		})
+		
+	})
 
 # Documentation
 
