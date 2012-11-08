@@ -21,43 +21,47 @@ JCarousellite hasn't been updated since IE6 and JQuery 1.1. As of now, the site 
 
 The project is still a WIP, but it works, and is used in production. 
 
-# Why? - We have a jCarousel plug-in already
+## What's the differences between Ringespiel and jCarousel?
 
-Ofcourse you do, and yes, jCarousel is a great plug-in. It offers a host of features and it is so customizable that you are limited only by your imagination.
+Just like jCarousel lite, Ringespiel is not a replacement for jCarousel; rather it is a light-weight alternative for users whose primary focus is not to build a full-blown image gallery. For instance, Ganesh Marwah's original use-case needed a very simple carousel widget that was going to sit in one corner of the screen. Not much customizations were needed. Ganesh Marwah figured that jCarousel, with all its options was kinda overkill & started developing his own mini carousel.
 
-jCarousel Lite is not a replacement for jCarousel; rather it is a light-weight alternative for users (like me) whose primary focus is not to build a full-blown image gallery. For instance, my use-case needed a very simple carousel widget that was going to sit in one corner of the screen. Not much customizations were needed. I figured that jCarousel, with all its options was kinda overkill. So, i started developing my own mini carousel, and you are right now looking at the 1.0 version of the same.
+Years later, that mini carousel was forked to become Ringespiel.
 
-# How Do I Use This?
+## How Do I Use Ringespiel?
 
-Create a "div" enclosing an "ul". Then run:
+### Dependencies
 
-Just add it as a dependency when defining your JS modules. If you haven't used modules before, go visit requirejs. 
+You'll need AMD modules of the following:
+
+ - [JQuery] (http://jquery.com/)
+ - [jquery.event.move](https://github.com/stephband/jquery.event.move)
+ - [jquery.event.swipe](https://github.com/stephband/jquery.event.swipe)
+
+### Starting Ringespiel
+
+In your HTML: create a "div" enclosing an "ul". 
+
+In your JS module: just add it as a dependency when defining your JS modules, select the div, and run .jCarouselLite() on it. 
 
 	// Define our module, depending on jquery and this plugin
 	define('jquery','ringespiel'), function($){
 
 		// Wait for document to be ready
 		$(function(){
-			// Start the carousel
-			$("#mycarousel").jCarouselLite();
+			// Start the carousel (with some options)
+			$("#mycarousel").jCarouselLite({
+		        btnNext: ".next",
+		        btnPrev: ".prev"
+		    });
 		})
 		
 	})
 
-# Documentation
-
-A basic carousel can be constructed with just the following snippet of code. This code is typically executed on document.ready or window.load event, but you can fire the call whenever it is appropriate for your use-case. The following example fires it on document.ready event.
-
-	$(function() {
-	    $(".anyClass").jCarouselLite({
-	        btnNext: ".next",
-	        btnPrev: ".prev"
-	    });
-	});
-    
-All the possible customizations are discussed in the section that follows
+If you haven't used JS modules yet, go visit [RequireJS](http://requirejs.org/). They're pretty simple.
 
 ## Options
+
+All the possible customizations are discussed below:
 
 ### btnPrev
 
